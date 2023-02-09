@@ -7,7 +7,7 @@ function App() {
 
   return (
     <main className='container'>
-     <Buton/>
+    <Buton/>
      <h1>Hola mundo</h1>
      <Form/>
      <h2>Holaa</h2>
