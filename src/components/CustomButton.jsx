@@ -8,15 +8,14 @@ const CustomButton = ({ textoBtn, mensaje }) => {
       width: '120px'
     }
   }
-  const handleClick = () => {
-    alert(mensaje)
-  }
 
   return (    
     <Button
       variant="contained"    
       color="secondary" 
-      onClick={handleClick}
+      onClick={() => {
+        alert(mensaje)
+      }}
       sx={style.button} 
     >
       {textoBtn}

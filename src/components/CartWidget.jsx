@@ -5,13 +5,12 @@ const CartWidget = () => {
   return (
     <Button 
       variant="contained"
-      color="primary"
       size="large"
       startIcon={ <AddShoppingCartIcon/> }
     >
       3
     </Button>  
-  )
+  );
 }
 
 export default CartWidget

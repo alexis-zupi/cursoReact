@@ -3,9 +3,6 @@ import CartWidget from "./CartWidget"
 import CustomButton from "./CustomButton"
 
 const NavBar = () => {
-
-  
-  
   const style = {
     boxNavbar: {
       backgroundColor: '#ffcdd2',
