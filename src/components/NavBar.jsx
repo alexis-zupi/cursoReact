@@ -36,7 +36,7 @@ const NavBar = () => {
   return (
     <Grid container sx={style.boxNavbar}>
         <Grid item xs={3} sm={3} md={2} lg={2} xl={2}>
-          <Typography sx={style.tituloNavbar} variant='h4'>Shop <Typography component="span">Zupi</Typography></Typography>
+          <Typography sx={style.tituloNavbar} variant='h4'>Shop<Typography component="span">Zupi</Typography></Typography>
         </Grid>
         <Grid item xs={6} sm={7} md={8} lg={8} xl={8} sx={style.containerButton}>
           <CustomButton textoBtn='Inicio' mensaje="hola estas en la seccion de Inicio" />

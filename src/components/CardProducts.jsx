@@ -1,10 +1,8 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 
-const CardProducts = ( {producto} ) => {
+const CardProducts = ({ producto }) => {
   return (
-    <Card
-        sx={{ maxWidth: 345 }}
-    >
+    <Card sx={{ maxWidth: 345, backgroundColor: '#cfd8dc' }} >
         <CardMedia 
             sx={{ height: 310 }}
             image={producto.image}
@@ -20,7 +18,7 @@ const CardProducts = ( {producto} ) => {
         </CardContent>
         <CardActions>
             <Button size="small">Compartir</Button>
-            <Button size="small">Aprende mas</Button>
+            <Button size="small">Aprende mas</Button> 
         </CardActions>
     </Card>
   )
