@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ItemCardContainer from './components/ItemCardContainer';
 import ItemListContainer from './components/ItemListContainer';
@@ -11,11 +10,12 @@ function App() {
 
   //axios libreria para hacer pedidos asincronicos, es mas rapida que fetch
   const obtenerProductos = async () => {
-    const res = await axios.get("https://fakestoreapi.com/products");
-    setProductos(res.data);
+    const res = await fetch("https://fakestoreapi.com/products");
+    const data = await res.json();
+    setProductos(data);
   }
-
-  useEffect(() => {
+ 
+ useEffect(() => {
     obtenerProductos();
   }, []);
 
@@ -27,5 +27,6 @@ function App() {
     </Box>
   )
 }
+
 
 export default App

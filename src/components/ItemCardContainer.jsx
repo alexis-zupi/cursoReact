@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material"
+import { Grid } from "@mui/material"
 import CardProducts from "./cardProducts"
 
 const ItemCardContainer = ({ productos }) => { 
@@ -8,7 +8,7 @@ const ItemCardContainer = ({ productos }) => {
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap',
-            justifyContent: 'space-between',
+            justifyContent: 'space-around',
         }
     }
 
