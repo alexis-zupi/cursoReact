@@ -1,8 +1,14 @@
 import { Grid, Typography } from "@mui/material"
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget"
 import CustomButton from "./CustomButton"
 
 const NavBar = () => {
+  let activeStyle = {
+    textDecoration: 'underline',
+    color: 'red',
+  };
+
   const style = {
     boxNavbar: {
       backgroundColor: '#ffcdd2',
@@ -36,13 +42,28 @@ const NavBar = () => {
   return (
     <Grid container sx={style.boxNavbar}>
         <Grid item xs={3} sm={3} md={2} lg={2} xl={2}>
-          <Typography sx={style.tituloNavbar} variant='h4'>Shop<Typography component="span">Zupi</Typography></Typography>
+          <NavLink
+            to='/'
+            style={{ textDecoration: 'none' }}
+          >
+            <Typography sx={style.tituloNavbar} variant='h4'>Shop<Typography component="span">Zupi</Typography></Typography>
+          </NavLink>
         </Grid>
         <Grid item xs={6} sm={7} md={8} lg={8} xl={8} sx={style.containerButton}>
-          <CustomButton textoBtn='Inicio' mensaje="hola estas en la seccion de Inicio" />
-          <CustomButton textoBtn='Productos' mensaje="hola estas en la seccion de Producto" />
+          <NavLink 
+            to='/'
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <CustomButton textoBtn='Home' mensaje="hola estas en la seccion de Inicio" />
+          </NavLink>
+          <NavLink
+            to='productos'
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            <CustomButton textoBtn='Productos' mensaje="hola estas en la seccion de Producto" />
+          </NavLink>
           <CustomButton textoBtn='Ofertas' mensaje="hola estas en la seccion de Ofertas" />
-          <CustomButton textoBtn='Catalogo' mensaje="hola estas en la seccion de Catalogo" />
+          <CustomButton textoBtn='Sucursales' mensaje="hola estas en la seccion de Catalogo" />
           <CustomButton textoBtn='Contactos' mensaje="hola estas en la seccion de Contactos" />
         </Grid>
         <Grid item sx={style.cart} xs={3} sm={2} md={2} lg={2} xl={2}>
