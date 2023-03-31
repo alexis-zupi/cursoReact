@@ -7,20 +7,9 @@ export const StyledContainerProducts = styled(Box)`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-`;
-
-export const StyleContainerCatalogo = styled(Box)`
     margin-top: 160px;
     margin-bottom: 20px;
-
-    div {
-        margin-bottom: 32px;
-    };
-
-    a {
-        text-decoration: none;
-    }
-`; 
+`;
 
 export const StyledButtonCard = styled(Button)`
     background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);

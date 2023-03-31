@@ -1,10 +1,8 @@
-import { Box } from "@mui/system"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
-import CategoryButton from "./CategoryButton"
+import { useParams } from "react-router-dom"
 import ItemList from "./ItemList"
-import { StyleContainerCatalogo, StyledContainerProducts } from "./StyledComponents"
+import { StyledContainerProducts } from "./StyledComponents"
 
 export default function ItemListContainer()  { 
     const [productos, setProductos] = useState([]);
@@ -24,24 +22,8 @@ export default function ItemListContainer()  {
     : productos;
 
     return (
-        <StyleContainerCatalogo> 
-            <Box>
-                <Link to={`/category/men's clothing`}>
-                    <CategoryButton textoBtn='Hombre' />
-                </Link>
-                <Link to={`/category/women's clothing`}>
-                    <CategoryButton textoBtn='Mujer' />
-                </Link>
-                <Link to={`/category/jewelery`}>
-                    <CategoryButton textoBtn='Joyeria' />
-                </Link>
-                <Link to={`/category/electronics`}>
-                    <CategoryButton textoBtn='Electronica' />
-                </Link>
-            </Box>
-            <StyledContainerProducts>    
-                {category ? <ItemList productos={FiltroProducto} /> : <ItemList productos={productos} />}  
-            </StyledContainerProducts>  
-        </StyleContainerCatalogo>
+        <StyledContainerProducts>    
+            {category ? <ItemList productos={FiltroProducto} /> : <ItemList productos={productos} />}  
+        </StyledContainerProducts> 
     );
 }

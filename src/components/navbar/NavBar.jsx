@@ -1,6 +1,6 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Icon, IconButton, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NavList from "./NavList";
 import NavDrawer from "./NavDrawer";
 import CartWidget from "./CartWidget";
@@ -8,6 +8,7 @@ import { Container } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
+import ButtonCategory from "./ButtonCategory";
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
@@ -24,12 +25,6 @@ export default function NavBar() {
             title:"Catalogo", 
             path:"/Catalogo",
             icon:<DraftsIcon/>
-        },
-        {
-            id:"3", 
-            title:"Contacto", 
-            path:"/contacto",
-            icon:<MenuIcon/>
         },
     ];
     
@@ -60,7 +55,8 @@ export default function NavBar() {
                         <NavList 
                             navArrayLinks={navArrayLinks} 
                             NavLink={NavLink} 
-                        />
+                        />  
+                        <ButtonCategory />
                         <CartWidget />
                     </Toolbar>
                 </Container>

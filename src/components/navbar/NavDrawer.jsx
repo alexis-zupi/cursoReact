@@ -1,5 +1,6 @@
 import { Drawer } from "@mui/material";
 import NavListDrawer from "./NavListDrawer";
+import ButtonCategory from "./ButtonCategory";
 
 export default function NavDrawer({ open, setOpen, navArrayLinks, NavLink }) {
     return (
@@ -14,6 +15,7 @@ export default function NavDrawer({ open, setOpen, navArrayLinks, NavLink }) {
                 NavLink={NavLink} 
                 setOpen={setOpen}        
             />
+            <ButtonCategory />
         </Drawer>
     )
 }

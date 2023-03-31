@@ -75,7 +75,7 @@ function FooterNavbar() {
                Sobre nosotros
             </Typography>
             <Link to="/catalogo">
-                <Typography variant="h6" color={"black"}>Nosotros</Typography>
+                <Typography variant="h6" color={"black"}>Productos</Typography>
             </Link>
             <Link to="/contacto">
                 <Typography variant="h6" color={"black"}>Contacto</Typography>
@@ -92,29 +92,11 @@ function FooterNavbar() {
             mb={5}
         >
             <Typography mt={3} mb={2} variant="h5" color={"black"}>
-                Nuestras Marcas
+                Atencion al Cliente
             </Typography>
-            <Link to="http://www.galletitastrio.com.ar/" target={"_blank"}>
-                <Typography variant="h6" color={"black"}>Trio</Typography>
-            </Link>
-            <Link to="https://www.felfort.com.ar/" target={"_blank"}>
-                <Typography variant="h6" color={"black"}>Felfort</Typography>
-            </Link>
-            <Link to="https://bodegaetnia.com/" target={"_blank"}>
-                <Typography variant="h6" color={"black"}>Etnia</Typography>
-            </Link>
-            <Link to="https://dos-hermanos.com/" target={"_blank"}>
-                <Typography variant="h6" color={"black"}>Dos Hermanos</Typography>
-            </Link>
-            <Link to="https://www.riskydit.com.ar/" target={"_blank"}>
-                <Typography variant="h6" color={"black"}>Risky-D</Typography>
-            </Link>
-            <Link to="http://alfajoresvimar.com/" target={"_blank"}>
-                <Typography variant="h6" color={"black"}>Vimar</Typography>
-            </Link>
-            <Link to="https://www.arcor.com/ar/" target={"_blank"}>
-                <Typography variant="h6" color={"black"}>Misky</Typography>
-            </Link>
+                <Typography variant="h6" color={"black"}>tel:3406 564123</Typography>  
+                <Typography variant="h6" color={"black"}>tel:3405 641216</Typography>
+                <Typography variant="h6" color={"black"}>tel:2450 654054</Typography>     
         </Grid>
     </Grid>
   );
