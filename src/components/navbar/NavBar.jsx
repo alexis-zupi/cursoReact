@@ -1,6 +1,6 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NavList from "./NavList";
 import NavDrawer from "./NavDrawer";
 import CartWidget from "./CartWidget";
@@ -27,8 +27,8 @@ export default function NavBar() {
         },
         {
             id:"3", 
-            title:"Register", 
-            path:"/register",
+            title:"Contacto", 
+            path:"/contacto",
             icon:<MenuIcon/>
         },
     ];

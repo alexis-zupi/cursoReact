@@ -3,7 +3,7 @@ import { useSnackbar } from "notistack";
 import Formulario from "./Formulario";
 import ListForm from "./ListForm";
 
-export default function Register() {
+export default function Contacto() {
     const {enqueueSnackbar} = useSnackbar();
 
     const handleClick = () => {

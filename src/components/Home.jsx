@@ -1,48 +1,13 @@
-import { Alert, Box, Button, Collapse, Divider, Typography } from "@mui/material";
-import { Stack } from "@mui/system";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import HomeBarraOpciones from "./HomeBarraOpciones";
+import HomeFeaturedProducts from "./HomeFeaturedProducts";
+import HomeIntro from "./HomeIntro";
 
 export default function Home() {
-    const [open, setOpen] = useState(true);
-
     return (
-        <Box sx={{ textAlign: "center", bgcolor: "gray", height: "935px" }}>
-            <Stack>
-                <Collapse in={open} sx={{ mt: 8 }}>
-                    <Alert 
-                        severity="warning"
-                        onClose={() => setOpen(false)}  
-                        color="warning"
-                    >
-                        Advertencia, esta pagina es fecticia!! No se pueden realizar compras en la misma.
-                    </Alert>
-                </Collapse>
-            </Stack>
-            <Typography variant="h3" component="h1" sx={{ pt: 10 }}>Bienvenidos a ShoppZupp</Typography>
-            <Box sx={{ display: "flex", mx: "auto", mt: 15, width: "80%" }}>
-                <Box>
-                    <img 
-                        src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg" 
-                        alt="Esta es la imagen"
-                        width="90%"
-                    />
-                </Box>
-                <Box sx={{ alignSelf: "center", width: "100%" }}>
-                    <p>¡Bienvenido a nuestra página de ventas de productos! Si estás buscando productos de alta calidad y a precios competitivos, has venido al lugar correcto. Estamos comprometidos con la satisfacción del cliente y esperamos que disfrutes de tu experiencia de compra en nuestra tienda en línea. ¡Gracias por visitarnos!</p>
-                    <NavLink 
-                        to="/catalogo"
-                        style={{ textDecoration:"none" }}
-                    >
-                        <Button 
-                            variant="contained" 
-                            sx={{ mt: 5 }}
-                        >
-                            Visita nuestra tienda!
-                        </Button>
-                    </NavLink>
-                </Box>
-            </Box> 
-        </Box>
+        <>
+            <HomeIntro />
+            <HomeBarraOpciones />
+            <HomeFeaturedProducts />
+        </>
     );
 }

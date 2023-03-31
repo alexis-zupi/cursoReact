@@ -2,9 +2,11 @@ import { Container } from "@mui/material";
 import { Navigate, Route, Routes } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Home from "./components/Home";
-import Register from "./components/Register";
+import Register from "./components/Contacto";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import Footer from "./components/Footer";
+import FooterNavbar from "./components/FooterNavbar";
 
 export default function App() {
   return (
@@ -29,18 +31,19 @@ export default function App() {
             element={<ItemListContainer/>}
           />
           <Route 
-            path="/register"
-            element={<Register/>}
-          />
-          <Route 
             path='/item/:id'
             element={ <ItemDetailContainer/> }
           />
+          <Route 
+            path="/contacto" 
+            element={<Register />} />
           <Route 
             path='*'
             element={<h2>Error 404</h2>}
           />
         </Routes>
+        <Footer />
+        <FooterNavbar />
       </Container>
     </>
   );
