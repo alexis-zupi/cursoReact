@@ -1,7 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useState } from "react";
+import ShareIcon from '@mui/icons-material/Share'
 
-const CardCount = ({ iniciacion, min, max }) => {
+export default function CardCount({ iniciacion, min, max }) {
     iniciacion = 1;
     min = 0;
     max = 10;
@@ -63,11 +64,10 @@ const CardCount = ({ iniciacion, min, max }) => {
                 variant="contained"
                 color="success"
                 onClick={handleAdd}
+                startIcon={ <ShareIcon/> }
             >
                 Agregar al Carro
             </Button>
         </Box>
     )
 }
-
-export default CardCount

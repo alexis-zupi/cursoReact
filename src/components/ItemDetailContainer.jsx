@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail"
+import ItemListDetail from "./ItemListDetail";
 
-const ItemDetailContainer = () => {
+export default function ItemDetailContainer() {
   const [products, setProducts] = useState([]);
 
   const obtenerProductos = async () => {
@@ -15,8 +15,6 @@ const ItemDetailContainer = () => {
   }, []);
 
   return (
-    <ItemDetail productos={products} />
+    <ItemListDetail productos={products} />
   )
 }
-
-export default ItemDetailContainer

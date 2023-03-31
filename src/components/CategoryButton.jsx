@@ -1,11 +1,10 @@
 import { Button } from "@mui/material"
 
-const CategoryButton = ({ textoBtn }) => {
-
+export default function CategoryButton({ textoBtn }) {
   const style = {
-    button: {
+    btn: {
       mx: 1,
-      width: '120px'
+      width: 140
     }
   }
 
@@ -13,11 +12,9 @@ const CategoryButton = ({ textoBtn }) => {
     <Button
       variant="contained"    
       color="primary" 
-      sx={style.button} 
+      sx={style.btn} 
     >
       {textoBtn}
     </Button> 
   )
 }
-
-export default CategoryButton

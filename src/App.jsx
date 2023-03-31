@@ -1,66 +1,47 @@
-import { createTheme, Paper, Switch, ThemeProvider } from '@mui/material';
-import { useState } from 'react';
-import ItemListContainer from './components/ItemListContainer';
-import ItemHomeContainer from './components/ItemHomeContainer';
-import NavBar from './components/NavBar';
-import { green } from '@mui/material/colors';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import { Container } from "@mui/material";
+import { Navigate, Route, Routes } from "react-router-dom";
+import NavBar from "./components/navbar/NavBar";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
-function App() {
-  const [modo, setModo] = useState(false);
-
-  const theme = createTheme({
-    palette: {
-      mode: modo ? "dark" : "light",
-    },
-    components: {
-      MuiCard: {
-        defaultProps: {
-          style: {
-            background: green[500]
-          }
-        }
-      }
-    }
-  })
-
+export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Paper>
-        <NavBar />
-        <Switch checked={modo} onChange={e => setModo(!modo)} color='secondary'/>
+    <>
+      <NavBar />
+      <Container maxWidth="xl">
         <Routes>
           <Route 
             path='/'
-            element={ <Navigate to={'home'} /> }
+            element={<Navigate to={'home'}/>}
           />
           <Route 
-            path='/home' 
-            element={ <ItemHomeContainer greeting='Este es el Home!!' /> } 
+            path="/home"
+            element={<Home/>}
           />
           <Route 
-            path='/productos'
-            element={ <ItemListContainer /> }
+            path="/catalogo"
+            element={<ItemListContainer/>}
           />
           <Route 
             path='/category/:category'
-            element={ <ItemListContainer /> }
+            element={<ItemListContainer/>}
+          />
+          <Route 
+            path="/register"
+            element={<Register/>}
           />
           <Route 
             path='/item/:id'
-            element={ <ItemDetailContainer /> }
+            element={ <ItemDetailContainer/> }
           />
           <Route 
             path='*'
-            element={ <h2>Error 404</h2> }
+            element={<h2>Error 404</h2>}
           />
         </Routes>
-      </Paper>
-    </ThemeProvider>
-    
-  )
+      </Container>
+    </>
+  );
 }
-
-
-export default App

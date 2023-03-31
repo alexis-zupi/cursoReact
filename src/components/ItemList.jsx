@@ -1,6 +1,6 @@
 import Item from "./Item"
 
-const ItemList = ({ productos }) => {
+export default function ItemList({ productos }) {
   return (
     <>
         {productos.map((producto) => (
@@ -16,5 +16,3 @@ const ItemList = ({ productos }) => {
     </>
   )
 }
-
-export default ItemList

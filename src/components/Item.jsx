@@ -1,44 +1,30 @@
-import { CardActions, CardContent, CardMedia, Typography } from "@mui/material"
-import { StyledButtonCard, StyledContainerCard } from "./StyledButtonCard"
-import ShareIcon from '@mui/icons-material/Share'
-import InfoIcon from '@mui/icons-material/Info'
-import { Link } from "react-router-dom"
+import { CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { StyledButtonCard, StyledCard } from "./StyledComponents";
+import InfoIcon from '@mui/icons-material/Info';
+import { Link } from "react-router-dom";
+import { Box } from "@mui/system";
 
-const Item = ({ id, image, title, category, price }) => {
-    const style = {
-        efectCard: {
-            width: 350,
-            background: '#cdd2ea',
-            height: 520,
-            marginTop: '15px',
-            marginBottom: '15px'
-        },
-    }
-
-    return (     
-        <StyledContainerCard sx={style.efectCard} >
+export default function Item({ id, image, title, category, price }) 
+    {return (     
+        <StyledCard>
             <CardMedia 
-                sx={{ height: 310, width: 350 }}
                 image={image}
                 title='descriptionImage'
             />
             <CardContent>
-                <Typography sx={{ height: 90, fontWeight: 'bold' }} variant="subtitle1" component="h5">
+                <Typography variant="subtitle1" component="h5">
                     {title}
                 </Typography>
-                <Typography sx={{ height: 30, fontStyle: 'italic' }} variant="subtitle2" component="span">
-                    {category}
-                </Typography>
+                <Box>
+                    <Typography variant="subtitle2" component="span">
+                        {category}
+                    </Typography>
+                    <Typography variant="h6" component="span">
+                        ${price}
+                    </Typography>
+                </Box>
             </CardContent>
-            <Typography sx={{ height: 30, fontStyle: 'italic', marginLeft: 2 }} variant="subtitle2" component="span">
-                ${price}
-            </Typography>
-            <CardActions sx={{ justifyContent: 'end', height: 60 }}>
-                <StyledButtonCard
-                    startIcon={<ShareIcon/>}
-                >
-                    Compartir
-                </StyledButtonCard>
+            <CardActions>
                 <Link to={`/item/${id}`}>
                     <StyledButtonCard 
                         size="small"
@@ -48,9 +34,6 @@ const Item = ({ id, image, title, category, price }) => {
                     </StyledButtonCard> 
                 </Link>
             </CardActions>
-        </StyledContainerCard>    
+        </StyledCard>    
     );
 }
-
-
-export default Item

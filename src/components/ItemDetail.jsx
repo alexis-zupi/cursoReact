@@ -1,53 +1,44 @@
-import { CardActions, CardContent, CardMedia, Typography } from "@mui/material"
-import { StyledButtonCard, StyledContainerCard } from "./StyledButtonCard"
-import ShareIcon from '@mui/icons-material/Share'
-import { useParams } from "react-router-dom"
-import CardCount from "./CardCount"
+import { Button, Grid, Typography } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import { BoxItemDetail, Img } from "./StyledComponents";
 
-const ItemDetail = ({ productos }) => {
-    const { id } = useParams();
-    
-    const style = {
-        efectCard: {
-            width: 350,
-            background: '#cdd2ea',
-            margin: '15px 0 50px 100px',
-        },
-    }
-    
-    const productoFilter = productos.filter((prod) => prod.id == id);
-    console.log(productoFilter);
-
-    return (
-        <>
-            {productoFilter.map((prod) => (
-                <StyledContainerCard sx={style.efectCard} key={prod.id}>
-                    <CardMedia 
-                        sx={{ height: 310, width: 350 }}
-                        image={prod.image}
-                        title='descriptionImage'
-                    />
-                    <CardContent>
-                        <Typography sx={{ fontWeight: 'bold' }} variant="subtitle1" component="h5">
-                            {prod.title}
+export default function ItemDetail({ id, image, title, category, price, description }) {
+    return ( 
+        <BoxItemDetail>      
+            <Grid container spacing={2}>
+                <Grid item xs={6}>
+                    <Img alt="complex" src={image}/>
+                </Grid>                 
+                <Grid item xs={6} container direction="column" spacing={2}>
+                    <Grid item>
+                        <Typography gutterBottom variant="h4" component="div">
+                            {title}
                         </Typography>
-                        <Typography sx={{ fontStyle: 'italic' }} variant="subtitle2" component="span">
-                            {prod.category}
+                        <Typography variant="h5" component="span">
+                            {category}
                         </Typography>
-                    </CardContent>
-                    <CardContent>
-                        <Typography sx={{ fontStyle: 'italic', marginLeft: 3, marginRight: 3 }} variant="h6" component="span">
-                            ${prod.description}
+                        <Typography variant="subtitle1" color="secondary">
+                            ID: {id}
                         </Typography>
-                        <Typography sx={{ fontStyle: 'italic', marginLeft: 2 }} variant="subtitle2" component="span">
-                            ${prod.price}
+                        <Typography variant="h3" component="div">
+                            ${price}
                         </Typography>
-                    </CardContent>
-                    <CardCount />
-                </StyledContainerCard>       
-            ))}
-        </>
+                    </Grid>
+                    <Grid item>
+                        <Button variant="contained" color="primary">
+                            AddCart
+                        </Button>
+                    </Grid>                
+                </Grid>
+                <Grid item>
+                    <Typography variant="h6" component="h5">
+                        Descripcion
+                    </Typography>
+                    <Typography variant="h6" component="span">
+                        {description}
+                    </Typography>
+                </Grid>                            
+            </Grid> 
+        </BoxItemDetail> 
     )
 }
-
-export default ItemDetail
