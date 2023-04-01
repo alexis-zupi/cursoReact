@@ -7,10 +7,12 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Footer from "./components/Footer";
 import FooterNavbar from "./components/FooterNavbar";
+import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
+import Cart from "./components/Cart";
 
 export default function App() {
   return (
-    <>
+    <ShoppingCartProvider>
       <NavBar />
       <Container maxWidth="xl">
         <Routes>
@@ -34,6 +36,7 @@ export default function App() {
             path='/item/:id'
             element={ <ItemDetailContainer /> }
           />
+          <Route exact path="/cart" element={<Cart />} />
           <Route 
             path="/contacto" 
             element={<Register />} />
@@ -45,6 +48,6 @@ export default function App() {
         <Footer />
         <FooterNavbar />
       </Container>
-    </>
+    </ShoppingCartProvider>
   );
 }

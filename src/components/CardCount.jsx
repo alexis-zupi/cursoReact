@@ -1,13 +1,13 @@
-import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
+import { Box, Button } from "@mui/material";
+import { useContext, useState } from "react";
 import ShareIcon from '@mui/icons-material/Share';
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import AddIcon from "@mui/icons-material/Add";
+import { CartContext } from "./context/ShoppingCartContext";
 
-export default function CardCount({ min, rating }) {
+export default function CardCount({ rating, id, title, price, image }) {
     const [count, setCount] = useState(1);
-    
-    min = 1;
+    const [cart, setCart] = useContext(CartContext);
   
     const handleIncrement = () => {
         if (count < rating) {
@@ -16,14 +16,30 @@ export default function CardCount({ min, rating }) {
     };
 
     const handleDecrement = () => {
-        if (count > min) {
+        if (count > 1) {
         setCount(count - 1);
         }
     };
 
     const handleAdd = () => {
+        setCart((currItems) => {
+            const isItemFound = currItems.find((item) => item.id === id);
+            if (isItemFound) {
+                return currItems.map((item) => {
+                    if (item.id === id) {
+                        return { ...item, quantity: item.quantity + count };
+                    } else {
+                        return item;
+                    }
+                });
+            } else {
+              return [...currItems, { id, quantity: count, price, title, image }];
+            }
+        });
+
+
         console.log(count);
-        setCount(min);
+        setCount(1);
     };
 
     const style = {

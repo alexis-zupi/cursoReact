@@ -28,7 +28,13 @@ export default function ItemDetail({ id, image, title, category, price, descript
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <CardCount rating={rating} />
+                        <CardCount 
+                            rating={rating} 
+                            id={id}
+                            title={title}
+                            price={price}
+                            image={image}
+                        />
                     </Grid>                
                 </Grid>
                 <Grid item>

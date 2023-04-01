@@ -1,6 +1,6 @@
-import { AppBar, Box, Icon, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import NavList from "./NavList";
 import NavDrawer from "./NavDrawer";
 import CartWidget from "./CartWidget";
@@ -57,7 +57,9 @@ export default function NavBar() {
                             NavLink={NavLink} 
                         />  
                         <ButtonCategory />
-                        <CartWidget />
+                        <Link to={"/cart"}>
+                            <CartWidget />
+                        </Link>
                     </Toolbar>
                 </Container>
             </AppBar>
