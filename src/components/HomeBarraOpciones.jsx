@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import AttachEmailIcon from "@mui/icons-material/AttachEmail";
-import { yellow } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 
 const style = {
@@ -13,8 +13,9 @@ const style = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    bgcolor: yellow[700],
+    bgcolor: blue[100],
     height: "100px",
+    mb: 5
   },
   div: {
     ml: 5,

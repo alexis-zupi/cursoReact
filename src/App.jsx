@@ -20,19 +20,19 @@ export default function App() {
           />
           <Route 
             path="/home"
-            element={<Home/>}
+            element={<Home />}
           />
           <Route 
             path="/catalogo"
-            element={<ItemListContainer/>}
+            element={<ItemListContainer />}
           />
           <Route 
             path='/category/:category'
-            element={<ItemListContainer/>}
+            element={<ItemListContainer />}
           />
           <Route 
             path='/item/:id'
-            element={ <ItemDetailContainer/> }
+            element={ <ItemDetailContainer /> }
           />
           <Route 
             path="/contacto" 

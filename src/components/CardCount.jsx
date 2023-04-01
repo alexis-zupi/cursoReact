@@ -1,16 +1,16 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useState } from "react";
-import ShareIcon from '@mui/icons-material/Share'
+import ShareIcon from '@mui/icons-material/Share';
+import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+import AddIcon from "@mui/icons-material/Add";
 
-export default function CardCount({ iniciacion, min, max }) {
-    iniciacion = 1;
-    min = 0;
-    max = 10;
-
-    const [count, setCount] = useState(iniciacion);
+export default function CardCount({ min, rating }) {
+    const [count, setCount] = useState(1);
+    
+    min = 1;
   
     const handleIncrement = () => {
-        if (count < max) {
+        if (count < rating) {
         setCount(count + 1);
         }
     };
@@ -23,7 +23,7 @@ export default function CardCount({ iniciacion, min, max }) {
 
     const handleAdd = () => {
         console.log(count);
-        setCount(0);
+        setCount(min);
     };
 
     const style = {
@@ -41,33 +41,28 @@ export default function CardCount({ iniciacion, min, max }) {
             <Box sx={{ marginBottom: '20px', marginTop: '30px' }}>
                 <Button 
                     variant="contained"  
-                    onClick={handleIncrement}
-                >
-                    +
-                </Button>
-                <Typography 
-                    sx={{ fontWeight: 'bold', margin: '30px' }} 
-                    variant="subtitle1" 
-                    component="span"
-                >
-                    {count}
-                </Typography>
-                <Button 
-                    variant="contained"  
+                    color="inherit" 
                     onClick={handleDecrement}
                 >
-                    -
+                    <HorizontalRuleIcon />
+                </Button>
+                <Button 
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    onClick={handleAdd}
+                    startIcon={ <ShareIcon/> }
+                >
+                    Agregar al Carro: {count}
+                </Button>
+                <Button 
+                    variant="contained"
+                    color="inherit"  
+                    onClick={handleIncrement}
+                >
+                    <AddIcon />
                 </Button>
             </Box>
-            <Button 
-                sx={{ marginBottom: '20px' }}
-                variant="contained"
-                color="success"
-                onClick={handleAdd}
-                startIcon={ <ShareIcon/> }
-            >
-                Agregar al Carro
-            </Button>
         </Box>
     )
 }

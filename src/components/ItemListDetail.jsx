@@ -18,6 +18,7 @@ export default function ItemListDetail({ productos }) {
                     category={prod.category}
                     price={prod.price}
                     description={prod.description}
+                    rating={prod.rating.count}
                 />
             ))}
         </>

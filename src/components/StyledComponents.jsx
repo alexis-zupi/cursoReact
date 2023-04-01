@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Box, Button, Card } from '@mui/material'
 
 export const StyledContainerProducts = styled(Box)`
-    background-color: #ffcdd2;
+    background-color: #bbdefb;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -14,7 +14,6 @@ export const StyledContainerProducts = styled(Box)`
 export const StyledButtonCard = styled(Button)`
     background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
     box-shadow: '0 3px 5px 2 rgba(255, 105, 135, .3';
-    color: white;
     font-weight: ${props => props.size === 'small' ? 'small' : 'large'};
     
     &:hover {
@@ -28,7 +27,6 @@ export const StyledCard = styled(Card)`
     width: 250px;
     margin: 10px 5px;
     transition: transform 0.5s ease-out;
-    background-color: #757de8;
 
     &:hover {
         transform: scale(1.03)

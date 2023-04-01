@@ -35,8 +35,7 @@ export default function HomeFeaturedProducts() {
         >
             <Grid item xs={12}>
                 <Typography
-                    mb={7}
-                    mt={5}
+                    mt={10}
                     variant="h4"
                     color={"black"}
                     align="center"

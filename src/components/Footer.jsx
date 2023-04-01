@@ -3,7 +3,7 @@ import React from "react";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PercentIcon from "@mui/icons-material/Percent";
-import { yellow } from "@mui/material/colors";
+import { blue, yellow } from "@mui/material/colors";
 
 function Footer() {
   const style = {
@@ -11,7 +11,7 @@ function Footer() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      bgcolor: yellow[700],
+      bgcolor: blue[100],
       mt: 6
     },
   };

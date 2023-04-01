@@ -1,12 +1,12 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { yellow } from "@mui/material/colors";
+import { blue, yellow } from "@mui/material/colors";
 
 function FooterNavbar() {
   const style = {
     grid: {
-        bgcolor: yellow[700],
+        bgcolor: blue[700],
       display: "flex",
       justifyContent: "center"
     },

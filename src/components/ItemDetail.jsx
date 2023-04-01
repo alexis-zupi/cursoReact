@@ -1,8 +1,8 @@
-import { Button, Grid, Typography } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Grid, Typography } from "@mui/material";
 import { BoxItemDetail, Img } from "./StyledComponents";
+import CardCount from "./CardCount";
 
-export default function ItemDetail({ id, image, title, category, price, description }) {
+export default function ItemDetail({ id, image, title, category, price, description, rating }) {
     return ( 
         <BoxItemDetail>      
             <Grid container spacing={2}>
@@ -20,14 +20,15 @@ export default function ItemDetail({ id, image, title, category, price, descript
                         <Typography variant="subtitle1" color="secondary">
                             ID: {id}
                         </Typography>
+                        <Typography variant="subtitle1" color="secondary">
+                            Stock disponible: {rating}
+                        </Typography>
                         <Typography variant="h3" component="div">
                             ${price}
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Button variant="contained" color="primary">
-                            AddCart
-                        </Button>
+                        <CardCount rating={rating} />
                     </Grid>                
                 </Grid>
                 <Grid item>

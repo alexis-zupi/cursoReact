@@ -6,7 +6,7 @@ export default function HomeIntro() {
     const [open, setOpen] = useState(true);
 
     return (
-        <Box sx={{ textAlign: "center", bgcolor: "gray", height: "935px" }}>
+        <Box sx={{ textAlign: "center", height: "935px" }}>
             <Stack>
                 <Collapse in={open} sx={{ mt: 8 }}>
                     <Alert 
