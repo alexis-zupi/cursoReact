@@ -4,7 +4,8 @@ import { CartContext } from "./context/ShoppingCartContext";
 import { grey, yellow } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 import { Divider, Grid, Paper } from "@mui/material";
-import { Form, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import SendOrder from "./SendOrder";
 
 function Cart() {
   const [cart, setCart, removeCart] = useContext(CartContext);
@@ -87,9 +88,9 @@ function Cart() {
                 Precio Total: $ {precioTotal}
               </Typography>
             </Grid>
-            {/*<Grid item xs={6}>
+            <Grid item xs={6}>
               <SendOrder total={precioTotal} />
-            </Grid>*/}
+            </Grid>
           </Grid>
         ) : (
           <Grid
