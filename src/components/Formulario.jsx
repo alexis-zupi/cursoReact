@@ -1,6 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import { useState } from "react"
+import { useState } from "react";
+import { useSnackbar } from "notistack";
 
 export default function Formulario() {
     const [nombre, setNombre] = useState("");
@@ -26,12 +27,24 @@ export default function Formulario() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(`Nombre: ${nombre}\nEmail: ${email}\nTelefono: ${telefono}`);
+    };
+
+    const {enqueueSnackbar} = useSnackbar();
+    const handleClick = () => {
+        enqueueSnackbar("Asegúrese de haber completado todos los campos requeridos. Si lo hizo, en intantes nos comunicamos con usted", {
+            variant: "success",
+            anchorOrigin: {
+                vertical: "bottom",
+                horizontal: "right"
+            }
+        });
     }; 
 
     return (
         <Box
             component="form"
             onSubmit={handleSubmit}
+            sx={{ width: "80%", mx: "auto" }}
         >
             <TextField 
                 sx={{ mb: 3 }}
@@ -123,10 +136,12 @@ export default function Formulario() {
             />
             <Button
                 type="submit"
-                variant="outlined"
+                variant="contained"
+                fullWidth
                 sx={{ mt: 2 }}
+                onClick={handleClick}
             >
-                Registar
+                Enviar
             </Button>
         </Box>
     )

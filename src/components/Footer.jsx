@@ -11,10 +11,6 @@ function Footer() {
         <Grid
             item
             xs={3}
-            display="flex"
-            flexDirection={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
         >
             <CreditScoreIcon sx={{ fontSize: 70, color: "black" }} />
             <Typography
@@ -34,10 +30,6 @@ function Footer() {
         <Grid
             item
             xs={3}
-            display="flex"
-            flexDirection={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
         >
             <LocalShippingIcon sx={{ fontSize: 70, color: "black" }} />
             <Typography
@@ -56,10 +48,6 @@ function Footer() {
         <Grid
             item
             xs={3}
-            display="flex"
-            flexDirection={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
         >
             <PercentIcon sx={{ fontSize: 70, color: "black" }} />
             <Typography

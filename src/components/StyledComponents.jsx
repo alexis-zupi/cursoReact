@@ -119,6 +119,13 @@ export const GridContainerFooter = styled(Grid)`
     justify-content: center;
     align-items: center;
     background-color: #bbdefb;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 export const GridContainerFooterNavbar = styled(Grid)`

@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 import React, { useContext } from "react";
 import { CartContext } from "./context/ShoppingCartContext";
-import { grey, yellow } from "@mui/material/colors";
+import { yellow } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 import { Divider, Grid, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -19,22 +19,16 @@ function Cart() {
   let precioTotal = subTotal + iva;
 
   const style = {
-    gridContainer: {
-      mt: "80px",
-    },
     paper: {
       display: "flex",
       alignItems: "center",
       p: 2,
-    },
-    button: {
-      bgcolor: yellow[700],
-    },
+    }
   };
 
   return (
     <Grid
-      sx={style.gridContainer}
+      sx={{ mt: "80px" }}
       justifyContent={"center"}
       container
       spacing={3}
@@ -42,8 +36,17 @@ function Cart() {
       <Grid container component={Paper} mt={5} minHeight={600} mb={"5%"}>
         {cart.map((prod) => {
           return (
-            <Grid key={prod.id} item xs={12} sx={style.paper}>
-              <Grid item xs={2} md={2} display="flex" justifyContent={"center"}>
+            <Grid 
+              key={prod.id} 
+              item xs={12} 
+              sx={style.paper}
+            >
+              <Grid 
+                item xs={2} 
+                md={2} 
+                display="flex" 
+                justifyContent={"center"}
+              >
                 <img src={prod.image} width="100px"></img>
               </Grid>
               <Grid item xs={4} md={4}>
@@ -66,6 +69,7 @@ function Cart() {
                   variant="contained"
                   color="error"
                   onClick={() => removeCart(prod.id)}
+                  sx={{ color: yellow[700] }}
                 >
                   Eliminar
                 </Button>
