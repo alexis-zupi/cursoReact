@@ -7,12 +7,6 @@ export default function Formulario() {
     const [apellido, setApellido] = useState("");
     const [email, setEmail] = useState("");
     const [telefono, setTelefono] = useState("");
-    {/*
-    const [error, setError] = useState({
-        error: false,
-        message: ""
-    })    
-    */}
 
     const [leyendaNombre, setLeyendaNombre] = useState("");
     const [leyendaApellido, setLeyendaApellido] = useState("");
@@ -32,18 +26,6 @@ export default function Formulario() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(`Nombre: ${nombre}\nEmail: ${email}\nTelefono: ${telefono}`);
-        {/*if (validateEmail(email)) {
-            setError({
-                error: false,
-                message: ""
-            });
-            console.log("Email correcto");
-        } else {
-            setError({
-                error: true,
-                message: "Formato de email incorrecto"
-            }); 
-        }*/}
     }; 
 
     return (

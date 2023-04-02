@@ -5,27 +5,13 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import AttachEmailIcon from "@mui/icons-material/AttachEmail";
-import { blue } from "@mui/material/colors";
 import { Link } from "react-router-dom";
-
-const style = {
-  box: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    bgcolor: blue[100],
-    height: "100px",
-    mb: 5
-  },
-  div: {
-    ml: 5,
-  },
-};
+import { BoxHomeBarraOpciones } from "./StyledComponents";
 
 function HomeBarraOpciones() {
   return (
-    <Box sx={style.box}>
-      <Box sx={style.div}>
+    <BoxHomeBarraOpciones>
+      <Box sx={{ ml: 5 }}>
         <Link to="https://www.andreani.com/#!/personas" target={"_blank"}>
           <Button>
             <LocalShippingIcon sx={{ fontSize: 70, color: "black" }} />
@@ -39,7 +25,7 @@ function HomeBarraOpciones() {
           </Button>
         </Link>
       </Box>
-      <Box sx={style.div}>
+      <Box sx={{ ml: 5 }}>
         <Link to="/catalogo">
         <Button>
           <InventoryIcon sx={{ fontSize: 70, color: "black" }} />
@@ -53,7 +39,7 @@ function HomeBarraOpciones() {
         </Button>
         </Link>
       </Box>
-      <Box sx={style.div}>
+      <Box sx={{ ml: 5 }}>
         <Link to="/contacto">
         <Button>
           <AttachEmailIcon sx={{ fontSize: 70, color: "black" }} />
@@ -67,7 +53,7 @@ function HomeBarraOpciones() {
         </Button>
         </Link>
       </Box>
-    </Box>
+    </BoxHomeBarraOpciones>
   );
 }
 

@@ -1,9 +1,6 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
-import {
-  collection,
-  addDoc,
-} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { yellow } from "@mui/material/colors";
 import { CartContext } from "./context/ShoppingCartContext";
 import db from "../../db/firebase-config";
@@ -32,9 +29,6 @@ function SendOrder({ total }) {
   };
 
   const style = {
-    texField: {
-      mt: 2,
-    },
     button: {
       mt: 2,
       bgcolor: yellow[700],
@@ -55,7 +49,7 @@ function SendOrder({ total }) {
         label="Email"
         variant="outlined"
         fullWidth
-        sx={style.texField}
+        sx={{ mt: 2 }}
         onChange={(e) => setEmail(e.target.value)}
       ></TextField>
       <Button

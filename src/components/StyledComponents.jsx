@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Box, Button, Card } from '@mui/material'
+import { Box, Button, Card, Grid } from '@mui/material'
 
 export const StyledContainerProducts = styled(Box)`
     background-color: #bbdefb;
@@ -96,4 +96,42 @@ export const BoxItemDetail = styled(Box)`
         margin-left: auto;
         margin-right: auto;
     }
-`
+`;
+
+export const BoxCartCount = styled(Box)`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
+export const BoxHomeBarraOpciones = styled(Box)`
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    background-color: #bbdefb;
+    height: 100px;
+    margin-bottom: 40px;
+`;
+
+export const GridContainerFooter = styled(Grid)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbdefb;
+`;
+
+export const GridContainerFooterNavbar = styled(Grid)`
+    background-color: #1976d2;
+    display: flex;
+    justify-content: center;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: start;
+        margin-bottom: 40px;
+    }
+`;

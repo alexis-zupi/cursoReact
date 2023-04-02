@@ -20,8 +20,7 @@ function Cart() {
 
   const style = {
     gridContainer: {
-      bgcolor: grey[200],
-      mt: "0px",
+      mt: "80px",
     },
     paper: {
       display: "flex",

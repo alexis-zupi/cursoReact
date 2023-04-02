@@ -1,23 +1,13 @@
-import { Divider, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React from "react";
 import CreditScoreIcon from "@mui/icons-material/CreditScore";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PercentIcon from "@mui/icons-material/Percent";
-import { blue, yellow } from "@mui/material/colors";
+import { GridContainerFooter } from "./StyledComponents";
 
 function Footer() {
-  const style = {
-    grid: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      bgcolor: blue[100],
-      mt: 6
-    },
-  };
-
   return (
-    <Grid container spacing={2} sx={style.grid} minHeight={250}>
+    <GridContainerFooter sx={{ mt: "50px" }} container spacing={2} minHeight={250}>
         <Grid
             item
             xs={3}
@@ -86,7 +76,7 @@ function Footer() {
                 Compra por bulto y/o por unidad.
             </Typography>
         </Grid>
-    </Grid>
+    </GridContainerFooter>
   );
 }
 

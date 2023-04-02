@@ -4,6 +4,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import AddIcon from "@mui/icons-material/Add";
 import { CartContext } from "./context/ShoppingCartContext";
+import { BoxCartCount } from "./StyledComponents";
 
 export default function CardCount({ rating, id, title, price, image }) {
     const [count, setCount] = useState(1);
@@ -51,7 +52,7 @@ export default function CardCount({ rating, id, title, price, image }) {
     }
 
     return (
-        <Box sx={style.boxCount} >
+        <BoxCartCount>
             <Box sx={{ marginBottom: '20px', marginTop: '30px' }}>
                 <Button 
                     variant="contained"  
@@ -77,6 +78,6 @@ export default function CardCount({ rating, id, title, price, image }) {
                     <AddIcon />
                 </Button>
             </Box>
-        </Box>
+        </BoxCartCount>
     )
 }

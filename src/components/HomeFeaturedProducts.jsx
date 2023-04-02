@@ -23,18 +23,11 @@ export default function HomeFeaturedProducts() {
 
     const prods = items.slice(0, 5);
 
-    const style = {
-        grid: {
-          bgcolor: grey[50],
-        },
-    };
-
     return (
         <Grid
             container
             spacing={2}
             ml={0}
-            sx={style.grid}
             justifyContent="center"
         >
             <Grid item xs={12}>

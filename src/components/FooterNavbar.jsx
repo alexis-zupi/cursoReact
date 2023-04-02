@@ -1,28 +1,14 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { blue, yellow } from "@mui/material/colors";
+import { GridContainerFooterNavbar } from "./StyledComponents";
 
 function FooterNavbar() {
-  const style = {
-    grid: {
-        bgcolor: blue[700],
-      display: "flex",
-      justifyContent: "center"
-    },
-  };
-
   return (
-    <Grid container spacing={2} sx={style.grid}>
+    <GridContainerFooterNavbar container spacing={2}>
         <Grid
             item
             xs={2}
-            display="flex"
-            flexDirection={"column"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            alignSelf={"start"}
-            mb={5}
         >
             <Typography mt={3} mb={2} variant="h5" color={"black"}>
             Estamos Para Vos
@@ -40,36 +26,26 @@ function FooterNavbar() {
         <Grid
             item
             xs={2}
-            display="flex"
-            flexDirection={"column"}
-            alignItems={"center"}
-            mb={5}
         >
-        <Typography mt={3} mb={2} variant="h5" color={"black"}>
-            Nuestras Categorias
-        </Typography>
-        <Link  to={`/category/men's clothing`}>
-            <Typography variant="h6" color={"black"}>Hombre</Typography>
-        </Link>
-        <Link  to={`/category/women's clothing`}>
-            <Typography variant="h6" color={"black"}>Mujer</Typography>
-        </Link>
-        <Link to={`/category/jewelery`}>
-            <Typography variant="h6" color={"black"}>Joyeria</Typography>
-        </Link>
-        <Link to={`/category/electronics`}>
-            <Typography variant="h6" color={"black"}>Electronica</Typography>
-        </Link>
+            <Typography mt={3} mb={2} variant="h5" color={"black"}>
+                Nuestras Categorias
+            </Typography>
+            <Link  to={`/category/men's clothing`}>
+                <Typography variant="h6" color={"black"}>Hombre</Typography>
+            </Link>
+            <Link  to={`/category/women's clothing`}>
+                <Typography variant="h6" color={"black"}>Mujer</Typography>
+            </Link>
+            <Link to={`/category/jewelery`}>
+                <Typography variant="h6" color={"black"}>Joyeria</Typography>
+            </Link>
+            <Link to={`/category/electronics`}>
+                <Typography variant="h6" color={"black"}>Electronica</Typography>
+            </Link>
         </Grid>
         <Grid
             item
             xs={2}
-            display="flex"
-            flexDirection={"column"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            alignSelf={"start"}
-            mb={5}
         >
             <Typography mt={3} mb={2} variant="h5" textAlign={"center"} color={"black"}>
                Sobre nosotros
@@ -84,12 +60,6 @@ function FooterNavbar() {
         <Grid
             item
             xs={2}
-            display="flex"
-            flexDirection={"column"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            alignSelf={"start"}
-            mb={5}
         >
             <Typography mt={3} mb={2} variant="h5" color={"black"}>
                 Atencion al Cliente
@@ -98,7 +68,7 @@ function FooterNavbar() {
                 <Typography variant="h6" color={"black"}>tel:3405 641216</Typography>
                 <Typography variant="h6" color={"black"}>tel:2450 654054</Typography>     
         </Grid>
-    </Grid>
+    </GridContainerFooterNavbar>
   );
 }
 
