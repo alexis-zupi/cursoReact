@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 import { Navigate, Route, Routes } from "react-router-dom";
 import NavBar from "./components/navbar/NavBar";
 import Home from "./components/Home";
-import Register from "./components/Contacto";
+import Contacto from "./components/Contacto";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Footer from "./components/Footer";
@@ -36,10 +36,13 @@ export default function App() {
             path='/item/:id'
             element={ <ItemDetailContainer /> }
           />
-          <Route exact path="/cart" element={<Cart />} />
+          <Route 
+            path="/cart" 
+            element={<Cart />} 
+          />
           <Route 
             path="/contacto" 
-            element={<Register />} />
+            element={<Contacto />} />
           <Route 
             path='*'
             element={<h2>Error 404</h2>}

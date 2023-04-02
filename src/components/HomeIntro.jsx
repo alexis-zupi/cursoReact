@@ -1,6 +1,7 @@
 import { Alert, Box, Button, Collapse, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import homeIntro from "../../public/HomeIntro.jpg"
 
 export default function HomeIntro() {
     const [open, setOpen] = useState(true);
@@ -22,7 +23,7 @@ export default function HomeIntro() {
             <Box sx={{ display: "flex", mx: "auto", mt: 15, width: "80%" }}>
                 <Box sx={{ width: "100%" }}>
                     <img 
-                        src="https://www.ecommercenews.pe/wp-content/uploads/2020/09/productos-ventas-online.jpg" 
+                        src={homeIntro} 
                         alt="Esta es la imagen"
                         width="90%"
                     />

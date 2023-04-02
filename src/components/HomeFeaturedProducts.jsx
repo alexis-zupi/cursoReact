@@ -1,29 +1,33 @@
 import { Grid, Typography } from "@mui/material";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { grey } from "@mui/material/colors";
 import Item from "./Item";
 import { StyledContainerProducts } from "./StyledComponents";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../../db/firebase-config";
 
 export default function HomeFeaturedProducts() {
-    const [productos, setProductos] = useState([]);
+    const [items, setItems] = useState([]);
 
-    const obtenerProductos = async () => {
-        const res = await axios.get("https://fakestoreapi.com/products");
-        setProductos(res.data);
+    const itemsCollectionRef = collection(db, "items");
+    const getItems = async () => {
+        const itemsCollection = await getDocs(itemsCollectionRef);
+        setItems(
+            itemsCollection.docs.map((doc) => ({...doc.data(), id: doc.id}))
+        );
     }
-    
+
     useEffect(() => {
-        obtenerProductos();
+        getItems();
     }, []);
 
-    const prods = productos.slice(0, 5);
+    const prods = items.slice(0, 5);
 
     const style = {
         grid: {
           bgcolor: grey[50],
         },
-      };
+    };
 
     return (
         <Grid

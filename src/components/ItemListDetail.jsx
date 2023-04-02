@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
-export default function ItemListDetail({ productos }) {
+export default function ItemListDetail({ items }) {
     const { id } = useParams();
     
-    const productoFilter = productos.filter((producto) => producto.id == id);
-    console.log(productoFilter);
+    const productoFilter = id 
+        ? items.filter((producto) => producto.id == id) 
+        : items;
 
     return (
         <>
@@ -18,7 +19,7 @@ export default function ItemListDetail({ productos }) {
                     category={prod.category}
                     price={prod.price}
                     description={prod.description}
-                    rating={prod.rating.count}
+                    rating={prod.rating}
                 />
             ))}
         </>

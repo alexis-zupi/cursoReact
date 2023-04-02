@@ -1,29 +1,33 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import ItemList from "./ItemList"
-import { StyledContainerProducts } from "./StyledComponents"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
+import { StyledContainerProducts } from "./StyledComponents";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../../db/firebase-config";
 
 export default function ItemListContainer()  { 
-    const [productos, setProductos] = useState([]);
     const { category } = useParams();
-    
-    const obtenerProductos = async () => {
-        const res = await axios.get("https://fakestoreapi.com/products");
-        setProductos(res.data);
+    const [items, setItems] = useState([]);
+
+    const itemsCollectionRef = collection(db, "items");
+    const getItems = async () => {
+        const itemsCollection = await getDocs(itemsCollectionRef);
+        setItems(
+            itemsCollection.docs.map((doc) => ({...doc.data(), id: doc.id}))
+        );
     }
-    
+
     useEffect(() => {
-        obtenerProductos();
+        getItems()
     }, []);
     
     const FiltroProducto = category
-    ? productos.filter((prod) => prod.category === category)
-    : productos;
+    ? items.filter((prod) => prod.category === category)
+    : items;
 
     return (
         <StyledContainerProducts>    
-            {category ? <ItemList productos={FiltroProducto} /> : <ItemList productos={productos} />}  
+            {category ? <ItemList productos={FiltroProducto} /> : <ItemList productos={items} />}  
         </StyledContainerProducts> 
     );
 }

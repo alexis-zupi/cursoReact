@@ -37,7 +37,6 @@ export default function CardCount({ rating, id, title, price, image }) {
             }
         });
 
-
         console.log(count);
         setCount(1);
     };
@@ -50,7 +49,6 @@ export default function CardCount({ rating, id, title, price, image }) {
             justifyContent: 'center',
         }
     }
-
 
     return (
         <Box sx={style.boxCount} >
